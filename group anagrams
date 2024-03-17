@@ -1,0 +1,11 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        dic={}
+        for anag in strs:
+            sortedanag="".join(sorted(anag))
+            if sortedanag in dic:
+                dic[sortedanag]+=[anag]
+            else:
+                dic[sortedanag]=[anag]
+        return ([dic[i] for i in dic])
+        
