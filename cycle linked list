@@ -1,0 +1,44 @@
+class node:
+    def __init__(self,val):
+        self.val=val
+        self.next=None
+class linkedlist:
+    def __init__(self):
+        self.head=None
+    def creative(self,n):
+        i=0
+        while i<n:
+            newnode=node(input("Enter value: "))
+            if self.head==None:
+                self.head=newnode
+            else:
+                t=self.head
+                while t.next:
+                    t=t.next
+                t.next=newnode
+            i=i+1
+        newnode.next=self.head.next
+    def show(self):
+        t=self.head
+        while t:
+            print(t.val,end="-")
+            t=t.next
+           
+obj=linkedlist()
+obj.creative(5)
+obj.show()
+
+"""
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        if not head or not head.next:
+            return False
+        fast = head.next
+        slow = head
+        while fast and fast.next:
+            if slow == fast:
+                return True
+            slow = slow.next
+            fast = fast.next.next
+        return False
+"""
