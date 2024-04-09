@@ -1,0 +1,7 @@
+class Solution:
+    def superPow(self, a: int, b: List[int]) -> int:
+        no = ''
+        for digit in b:
+            no += str(digit)
+        number = int(no)
+        return pow(a, number, 1337) 
