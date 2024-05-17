@@ -1,0 +1,9 @@
+class Solution:
+    def maxCoins(self, piles: List[int]) -> int:
+        piles.sort()
+        sum1=0
+        for i in range(len(piles)//3):
+            piles.pop()
+            sum1+=piles.pop()
+            piles.pop(0)
+        return sum1
